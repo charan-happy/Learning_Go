@@ -53,7 +53,8 @@ func main() {
 ```
 - Run the file as `$ go run hello-world.go`
 
-![Execution image](image.png)
+![image](https://github.com/charan-happy/Learning_Go/assets/89054489/a2bc2728-80cf-4791-94b6-af216b56dac3)
+
 
 packages :
 
