@@ -1,8 +1,8 @@
-#Variables,types and keyword
+# Variables,types and keyword
  ## Operators and built-infunction
  ## Gokeywords 
  ## Controlstructures 
- ## Arrays,slicesandmaps
+
 
 
 
@@ -267,8 +267,148 @@ case
 ```
 
  ## Control structures 
- 
- ## Arrays, slices and maps
+ - control structures in Golang allows you to control the flow of your program's execution. This includes making decisions based on conditions and repeating a block of code a certain number of times.
+
+**if**
+- The if statement is used to conditionally execute a block of code. The code within the if block is executed if the specified condition evaluates to true.
+
+```go
+x := 32
+if x > 30 {
+fmt.Println("x is greater than 30")
+}
+```
+
+we can also include an optional initialization statement before the condition:
+
+```go
+if y := x - 10; y > 0 {
+fmt.Println("y is greater than o")
+}
+```
+
+if-else
+
+- The if-else statement allows you to execute a different block of code if the specified condition evaluates to false. Here's an example:
+
+```go
+x := 5
+if x > 10 {
+fmt.Println("x is greater than 10")
+} else {
+fmt.Println("x is not greater than 10")
+}
+```
+
+Else-if
+- The else if statement allows you to chain multiple conditions in an if-else block. When the first if condition is false, the program checks the subsequent else if conditions in order. If one of the else if conditions is true, the corresponding block of code is executed, and the remaining else if and else blocks are skipped. If none of the conditions are met, the else block is executed
+  
+```go
+x := 25
+if x > 50 {
+ fmt.Println("x is greater than 50")
+} else if x > 20 {
+ fmt.Println("x is greater than 20 but not greater than 50")
+} else {
+ fmt.Println("x is not greater than 20")
+}
+```
+
+Switch 
+
+- The switch statement is used to execute a specific block of code based on the value of an expression. It is particularly useful when you have multiple conditions to check:
+  
+```go
+x := 5
+switch x {
+ case 1:
+ fmt.Println("x is 1")
+ case 2:
+ fmt.Println("x is 2")
+ case 3, 4, 5:
+ fmt.Println("x is 3, 4, or 5")
+ default:
+ fmt.Println("x is not 1, 2, 3, 4, or 5")
+}
+```
+- The switch statement can also be used with an optional initialization statement, and you can use it with conditions instead of values:
+
+```go
+x := 42
+switch y := x % 2; {
+ case y == 0:
+ fmt.Println("x is even")
+ case y == 1:
+ fmt.Println("x is odd")
+}
+```
+
+For
+
+- The for statement is used to create loops in Go. There are three types of for loops:
+
+For loop with an initialization statement, condition, and post statement:
+
+```go
+for i := 0; i < 5; i++ {
+ fmt.Println(i)
+}
+```
+
+for loop with only condition (simmilar to a while loop in other languages):
+
+```go
+i := 0
+for i < 5 {
+ fmt.Println(i)
+ i++
+}
+```
+
+infinite loop:
+
+```
+for {
+ fmt.Println("This loop will run forever!")
+}
+```
+- To break out of a loop, use the break statement. To skip the current iteration and continue with the next one, use the continue statement
+
+**For range**
+
+The for range loop is used to iterate over the elements of a collection, such as an array, slice, or map. When used with arrays or slices, the loop provides both the index and the value at that index. When used with maps, the loop provides the key and the value for each key-value pair
+
+Here’s an example with a slice:
+```go
+numbers := []int{1, 2, 3, 4, 5}
+for index, value := range numbers {
+ fmt.Printf("Index: %d, Value: %d\n", index, value)
+}
+```
+If you only need the index, you can use the _ (blank identifier) to ignore the value:
+```go
+for index, _ := range numbers {
+ fmt.Printf("Index: %d\n", index)
+}
+```
+Similarly, if you only need the value, you can omit the index:
+```go
+for _, value := range numbers {
+ fmt.Printf("Value: %d\n", value)
+}
+```
+Here’s an example with a map:
+```go
+ages := map[string]int{
+"Alice": 30,
+"Bob": 25,
+"Carol": 35,
+}
+for key, value := range ages {
+ fmt.Printf("Key: %s, Value: %d\n", key, value)
+}
+```
+By using else if and for range in your Go programs, you can create more complex conditional structures and easily iterate over collections like arrays, slices, and maps.
 
 
 Taking input from the user:
