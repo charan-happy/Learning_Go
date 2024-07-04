@@ -60,18 +60,30 @@ packages :
 
 `package main`
 - Every go file starts with a package declaration, which provides a way for code to be reused. The main package is the starting point of the GO program.
+-  package is a Go keyword that defines which code bundle this file
+ belongs to. There can be only one package per folder, and each .go file
+ has to declare the same package name at the top of its file. In this example, the code belongs to the main package.
   
-imports:
+`imports:`
 - This is where you include code from other packages. For ex: The `fmt` package, is commonly used for formatted I/O.
+- Import is a Go keyword that tells the Go compiler which other
+ packages you want to use in this file. Here you import the fmt package
+ that comes with the standard library. The fmt package provides
+ formatting and printing functions that can be useful when developing
+
 ```go
 import fmt
 ```
   
 Functions:
  - Functions are declared with the `func` keyword. the main function is the entry point of a GO program.
+ - fmt.Println is a Go function, found in the fmt package, that tells
+ the computer to print some text to the screen.
+
 ``` go
    func main() {
       fmt.Package("hello world, welcome to go...")
    }
 ```
 
+let's go to [Day-2](https://github.com/charan-happy/Learning_Go/edit/main/Day-2/Notes.md)
