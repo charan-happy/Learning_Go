@@ -1,1 +1,7 @@
+# Structs
 
+# Interfaces
+
+## Structs
+
+## Interfaces
