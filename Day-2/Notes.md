@@ -27,7 +27,7 @@
 
 > Multiple **var** declarations may also be grouped, **const** and **import** also allow this.
 
-```
+```go
 var (
 x int
 b bool
