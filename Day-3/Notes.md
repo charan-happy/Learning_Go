@@ -7,6 +7,11 @@
 Storing multiple values in a list can be done by utilizing `arrays`. or their more flexible cousin: `slices`. A dictionary or hash type is also available, it is called  `map` in Go.
 
 ### Arrays
+- Arrays are fixed-size, homogeneous data structures that store elements of the same type.
+- To declare an array, use the `var` keyword followed by array name, the size in square brackets[], and the element type.
+`var numbers [6]int`
+- You can initialize an array  during declaration by providing the elements inside curly braces {}
+`var numbers = [5]int{1, 2, 3, 4, 5}`
 - An array is defined by: `[n]<type>`, where 'n' is the length of the array. Assigning or indexing an element in the array is done with square brackets:
 
 ```go
@@ -26,15 +31,108 @@ fmt.Println("The first element is %d\n", arr[0])
 
 when declaring arrays you always have to type something in between the square brackets, either a number of three dots (...)
 
-### slices
+- Access array elements using the index enclosed in square brackets []
+`firstNumber := numbers[0] // Access the first element`
 
+### slices
+- slices are dynamic, resizable, and reference a section of an underlying array.
+- To declare a slice, use the `var` keyword followed by the slice name and the element type with empty square brackets []. `var numbers []int`
+- create a new slice using the make() function or by slicing an existing array or slice
+```go
+numbers := make([]int, 5) // create a slice with a length of 5 and a capacity of 5
+existingSlice := numbers[1:4] // slices the 'numbers' slice from index 1 (inclusive) to 4 (exclusive)
+```
+#### slice operation
+- Append elements to a slice using the append() function
+```go
+numbers := []int{1, 2, 3}
+numbers = append(numbers, 4, 5)
+```
+- copy elements from one slice to another using the copy() function
+```go
+src := []int{1, 2, 3}
+dst := make([]int, len(src))
+copy(dst, src)
+```
+- change the length or capacity of a slice using `[:n]` or `[:m:n]` syntax
+```go
+numbers := []int{1, 2, 3, 4, 5}
+numbers = numbers[:3] // Truncate the slice to the first three elements
+```
 - A slice refers to an underlying array. what makes slices different from arrays is that a slice is a pointer to an array; slices are reference types, which means that if you assign one slice to another, both refer to the same underlying array.
 
 - For instance, if a function takes a slice argument, 
+
+#### initializing slices
+
+- slices can be created using make() function, which takes the element type, the length, and an optional capacity
+
+`numbers := make([]int, 5, 10)`--> creates a slice with a length of 5 and capacity of 10
+
+- slices can also be initialized by providing the elements inside curly braces {}
+
+`var numbers = []int{1, 2, 3, 4, 5}`
+
+- Access slice elements using the index enclosed in square brackets []
+`FirstNumber := numbers[0] // Access the first element`
+
+#### Working with Arrays and Slices
+- Iterate over arrays or slices using the for loop with range keyword.
+
+```go
+for index, value := range numbers {
+  fmt.Println("numbers[%d] = %d\n", index, value)
+}
+```
+- Modify array or slice elements by assigning a new value to the specified index
+
+`numbers[0] = 42 // set the first element to 42`
+
+- Find the length of an array or a slice using the len() function.
+`length := len(numbers)`
+- for slices, find the capacity using the cap() function
+`capacity := cap(numbers)`
+
 ### maps
 
-- 
+- Maps are unordered collection of key-value pairs. keys must be unique, and values can be of any data type
+- Maps are useful for tasks like counting occurences or storing configuration data.
 
+#### Initializing Maps
+
+- Declare an empty map using make() function
+`var ages = make(map[string]int)`
+- initialize a map with key-value pairs during declaration
+```go
+var ages = map[string]int{
+  "Charan": 25,
+  "Naga": 24,
+}
+```
+
+#### Working with Maps
+```go
+// Access a map's value by it's key
+age := ages["Charan"]
+// Add or modify key-value pairs in a map
+ages["Cherry"] = 23
+ages["Charan"] = 28
+// Remove a key-value pair from a map using the delete() function
+delete(ages, "Charan")
+// Check if a key exists in a map
+age, ok := ages["Charan"]
+if ok {
+  fmt.Println("Charan's age is", age)
+} else {
+  fmt.Println("Alice's age is not in the map")
+}
+// iterate over key-value pairs in a map using the for loop with the range keyword
+for name, age := range ages {
+  fmt.Println("%s is %d years old\n", name, age)
+}
+// length of a map using the len() function
+count := len(ages)
+```
 ## Functions
 
 - functions are blocks of code that can be defined to perform a specific task and can be called by their name. Functions promote code reusability and help in organizing your code in a modular way.
@@ -168,3 +266,5 @@ In these example, sayHello variable holds the closure that captures the message 
 
 In summary, anonymous functions and closures in go are powerful tools in go that enable you to use functions as values, pass functions as arguments to other functions, and define functions within functions to capture and hide state. They are especially useful when dealing with higher-order functions (functions that take other functions as arguments or return them as results)
 
+
+[Day-4](https://github.com/charan-happy/Learning_Go/edit/main/Day-4/)

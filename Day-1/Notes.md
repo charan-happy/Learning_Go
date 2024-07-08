@@ -53,10 +53,11 @@ func main() {
 ```
 - Run the file as `$ go run hello-world.go`
 
-![image](https://github.com/charan-happy/Learning_Go/assets/89054489/a2bc2728-80cf-4791-94b6-af216b56dac3)
 
 
-packages :
+![alt text](image.png)
+
+### packages :
 
 `package main`
 - Every go file starts with a package declaration, which provides a way for code to be reused. The main package is the starting point of the GO program.

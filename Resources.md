@@ -12,4 +12,7 @@
 
 [Go Vidoes](https://youtu.be/un6ZyFkqFKo?si=nwPQxE4Av81LJRdL)
 
+[gyata.ai](https://www.gyata.ai/golang/)
+[golang-bot](https://golangbot.com/learn-golang-series/)
+
 [Datastructures and algorithms](https://www.youtube.com/watch?v=2ZLl8GAk1X4)
