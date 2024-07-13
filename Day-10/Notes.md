@@ -315,13 +315,3 @@ if err != nil {
 - In this example, we create a json.Decoder and set the DisallowUnknownFields() option. If an unknown field is encountered, a json.UnmarshalTypeError error is returned, which we handle using a type assertion
 
 
-## Best practices for working with JSON in Golang
-— Struct tags  
-— Validation  
-— Omitempty and Ignore  
-
-## Differences between marshaling/unmarshaling and encoding/decoding
-
-## Working with JSON and maps in Golang
-
-## JSON for API calls: examples and use cases
