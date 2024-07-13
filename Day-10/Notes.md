@@ -1,18 +1,13 @@
 # Working with Json
 
-[Introduction to JSON in Golang]()  
-[Golang standard libraries for JSON]()  
-[Encoder and decoder JSON data]()  
-[Marshaling and unmarshaling JSON data]()  
-[Handling nested JSON data and custom types]()  
-[Error handling in JSON operations]()  
-Best practices for working with JSON in Golang  
-— Struct tags  
-— Validation  
-— Omitempty and Ignore  
-[Differences between marshaling/unmarshaling and encoding/decoding]()  
-[Working with JSON and maps in Golang]()  
-[JSON for API calls: examples and use cases]()  
+[Introduction to JSON in Golang](#introduction-to-json-in-golang)  
+[Golang standard libraries for JSON](#golang-standard-libraries-for-json)  
+[Encoder and decoder JSON data](#encoder-and-decoder-json-data)  
+[Marshaling and unmarshaling JSON data](#marshaling-and-unmarshaling-json-data)  
+[Handling nested JSON data and custom types](#handling-nested-json-data-and-custom-types)  
+[Error handling in JSON operations](#error-handling-in-json-operations)  
+
+
 
 
 ## Introduction to JSON in Golang
