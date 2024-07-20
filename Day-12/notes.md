@@ -89,11 +89,109 @@ func main() {
 }
 ```
 
-- 
+- In these example we have created a new instance of http.ServeMux and registered two routes:/ and /greet. The server listens on port 8080 and routes incoming requests to the appropriate handler function
+
+- While the default http.ServeMux is suitable for simple usecases, many golang developers prefer using third-party routers and multiplexers for more advanced features and improved performance. popular routers include Gorilla Mux, httprouter, and Echo.
 
 
 ## Creating API endpoints and managing routing
+- To create API endpoint and manage routing using Golang's standard library, you'll use the `http.Handle` and `http.Handlefunc` functions to register your API routes and their corresponding handlers. These handlers are responsible for processing incoming HTTP requests and sending back the appropriate response.
+
+Step-by-step guide to create API endpoints and managing routing :
+
+```go
+//Import required packages
+package main 
+import (
+    "fmt"
+    "net/http"
+)
+// Defining handler functions
+func greetHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprint(w, "Hello from the greet endpoint!")
+}
+func userHandler(w http.ResponseWriter, r *http.Request){
+    fmt.Fprint(w, "Listing users..")
+}
+// Register routes and handlers
+func main() {
+    http.HandleFunc("/greet", greetHandler)
+    http.HandleFunc("/users", usersHandler)
+    // start the HTTP server
+    http.ListenAndServe(":8082", nil)
+}
+```
+
+Following above steps, we've created a basic HTTP server with two API endpoints and managed their routing using Golang's standard library. this approach works for simple usecases, but for more complex applications with advanced routing needs, consider using third-party routers and multiplexers.
+
 
 ## Handling HTTP requests and responses
+
+- Handling HTTP requests and responses in Golang is done through the `net/http` package. This package provides the tools to read incoming requests, create responses, and manage the communication between the client and the server
+
+**Reading incoming requests:**
+- To read the incoming HTTP request, you can access its properties and methods through the *http.Request parameter in the handler function:
+
+
+```go
+func handler(w http.ResponseWriter, r *http.Request) {
+    method := r.Method
+    url := r.url
+    header := r.Header
+    // ... read other request properties and perform actions
+}
+```
+
+**Parsing query parameters and form data:**
+- you can parse query parameters and form data using `r.URL.Query()` and `r.ParseForm()` methods:
+
+```go
+func handler(w http.ResponseWriter, r *http.Request) {
+    queryParameters := r.URL.Query()
+    r.ParseForm()
+    formData := r.Form
+    // .. process query parameters and form data
+```
+**Reading the request body:**
+- To read the request body, use the `io/ioutil` package to read the `r.Body`:
+
+```go
+func handler(w http.ResponseWriter, r *http.Request) {
+    body, err := ioutil.ReadAll(r.Body)
+    if err != nil {
+        // handle error
+    }
+    // .. process the request body
+}
+```
+**Setting response headers:**
+- you can set the response headers using the `http.ResponseWriter's Header()` method:
+
+```go
+func handler(w http.ResponseWriter, r *http.Request) {
+    w.Header().Set("Content-Type", "application/json")
+    w.Header().Set("Custom-Header", "custom-value")
+    // .. set other response headers
+}
+```
+**Writing the response body:**
+- To write the response body, you can use the `io package` or the `fmt.Fprint` function:
+
+```go
+func handler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprint(w, "Hello, this is response body!")
+}
+```
+**setting the response status code:**
+- Set the response status code using the http.ResponseWriter's `WriteHeader()`method :
+
+```go
+func handler(w http.ResponseWriter, r *http.Request) {
+    w.WriteHeader(http.StatusOK)
+    // .. write the response body and set other headers
+}
+```
+By following above steps we can handle incoming HTTP Requests and create appropriate responses using the `net/http` package in golang.
+
 
 
