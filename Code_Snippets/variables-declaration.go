@@ -1,3 +1,4 @@
+// variables declaration at function level
 package main
 
 import "fmt"
@@ -16,3 +17,19 @@ func main() {
 	fmt.Println(validity, price, LoginMessage)
 	fmt.Println(i, j, k)
 }
+
+// variables declaration at package level
+
+var customerLoginId int = 2300 // standard way
+var validity int               // Initializing later
+var years = 24                 // Type inference
+
+func main() {
+	fmt.Println(customerLoginId, validity, years)
+}
+
+var ( // var blocks
+	customerName    = "charan"
+	customerAge     = 24
+	customerContact = "897278709"
+)
