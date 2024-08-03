@@ -1,7 +1,7 @@
 
-[packages](#packages)
-[Imports](#imports)
-[Exports](#exports)
+[packages](#packages)  
+[Imports](#imports)  
+[Exports](#exports)  
 
 # packages
 - Packages are a way to organize and reuse code in Go programs.

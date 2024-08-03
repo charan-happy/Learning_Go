@@ -19,37 +19,32 @@ star ⭐ the repo and follow me on [github](https://www.github.com/charan-happy)
 |[Day-3](https://github.com/charan-happy/Learning_Go/tree/main/Day-3)|1. Arrays,slices,maps <br> 2. Functions|
 |[Day-4](https://github.com/charan-happy/Learning_Go/tree/main/Day-4)|1.structs <br> 2.Interfaces|
 |[Day-5](https://github.com/charan-happy/Learning_Go/tree/main/Day-5)|Revision of concepts from day-1 to day-4|
-|[Day-6](https://github.com/charan-happy/Learning_Go/tree/main/Day-6)|1.concurrency|
-|[Day-7](https://github.com/charan-happy/Learning_Go/tree/main/Day-7)||
-|[Day-8](https://github.com/charan-happy/Learning_Go/tree/main/Day-8)||
-|[Day-9](https://github.com/charan-happy/Learning_Go/tree/main/Day-9)||
-|[Day-10](https://github.com/charan-happy/Learning_Go/tree/main/Day-10)||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
+|[Day-6](https://github.com/charan-happy/Learning_Go/tree/main/Day-6)|1.pointers <br> panic and recover <br> Type conversion/type casting <br> Type assertion|
+|[Day-7](https://github.com/charan-happy/Learning_Go/tree/main/Day-7)|1. Struct composition and embedding <br> methods and embedded structs <br> Interface embedding|
+|[Day-8](https://github.com/charan-happy/Learning_Go/tree/main/Day-8)|1.packages <br> 2. Imports <br> 3. Exports|
+|[Day-9](https://github.com/charan-happy/Learning_Go/tree/main/Day-9)|1. Errors and Error handling <br> 2. Creating and returning errors|
+|[Day-10](https://github.com/charan-happy/Learning_Go/tree/main/Day-10)|1. Introduction to json in Golang <br> 2. Golang standard libraries for json <br> 3. Encoder and decoder json data <br> 4. marshaling and unmarshaling json data <br> 5. Handling nested JSON data and custom types <br> 6. Error handling in JSON operations|
+|[Day-11](https://github.com/charan-happy/Learning_Go/tree/main/Day-11)||
+|[Day-12](https://github.com/charan-happy/Learning_Go/tree/main/Day-12)||
+|[Day-13](https://github.com/charan-happy/Learning_Go/tree/main/Day-13)||
+|[Day-14](https://github.com/charan-happy/Learning_Go/tree/main/Day-14)||
+|[Day-15](https://github.com/charan-happy/Learning_Go/tree/main/Day-15)||
+|[Day-16](https://github.com/charan-happy/Learning_Go/tree/main/Day-16)||
+|[Day-17](https://github.com/charan-happy/Learning_Go/tree/main/Day-17)||
+|[Day-18](https://github.com/charan-happy/Learning_Go/tree/main/Day-18)||
+|[Day-19](https://github.com/charan-happy/Learning_Go/tree/main/Day-19)||
+|[Day-20](https://github.com/charan-happy/Learning_Go/tree/main/Day-20)||
+|[Day-21](https://github.com/charan-happy/Learning_Go/tree/main/Day-21)||
+|[Day-22](https://github.com/charan-happy/Learning_Go/tree/main/Day-22)||
+|[Day-23](https://github.com/charan-happy/Learning_Go/tree/main/Day-23)||
+|[Day-24](https://github.com/charan-happy/Learning_Go/tree/main/Day-24)||
+|[Day-25](https://github.com/charan-happy/Learning_Go/tree/main/Day-25)||
+|[Day-26](https://github.com/charan-happy/Learning_Go/tree/main/Day-26)||
+|[Day-27](https://github.com/charan-happy/Learning_Go/tree/main/Day-27)||
+|[Day-28](https://github.com/charan-happy/Learning_Go/tree/main/Day-28)||
+|[Day-29](https://github.com/charan-happy/Learning_Go/tree/main/Day-29)||
+|[Day-30](https://github.com/charan-happy/Learning_Go/tree/main/Day-30)||
+
 
 [Resources](https://github.com/charan-happy/Learning_Go/blob/main/Resources.md)
 
