@@ -24,10 +24,10 @@ star ⭐ the repo and follow me on [github](https://www.github.com/charan-happy)
 |[Day-8](https://github.com/charan-happy/Learning_Go/tree/main/Day-8)|1.packages <br> 2. Imports <br> 3. Exports|
 |[Day-9](https://github.com/charan-happy/Learning_Go/tree/main/Day-9)|1. Errors and Error handling <br> 2. Creating and returning errors|
 |[Day-10](https://github.com/charan-happy/Learning_Go/tree/main/Day-10)|1. Introduction to json in Golang <br> 2. Golang standard libraries for json <br> 3. Encoder and decoder json data <br> 4. marshaling and unmarshaling json data <br> 5. Handling nested JSON data and custom types <br> 6. Error handling in JSON operations|
-|[Day-11](https://github.com/charan-happy/Learning_Go/tree/main/Day-11)||
-|[Day-12](https://github.com/charan-happy/Learning_Go/tree/main/Day-12)||
-|[Day-13](https://github.com/charan-happy/Learning_Go/tree/main/Day-13)||
-|[Day-14](https://github.com/charan-happy/Learning_Go/tree/main/Day-14)||
+|[Day-11](https://github.com/charan-happy/Learning_Go/tree/main/Day-11)|7. Best practices for working with json in Golang <br> 8. Difference between marshaling / unmarshaling and encoding/decoding <br> 9. Working with json and maps in golang <br> 10. json for API calls: Examples and use cases|
+|[Day-12](https://github.com/charan-happy/Learning_Go/tree/main/Day-12)|1. Introduction to HTTP and APIs in Golang <br> using Golang's standard libraries for HTTP servers and clients <br> understanding multiplexers in golang <br> Creating API endpoints and managing routines <br> Handling HTTP requests and responses |
+|[Day-13](https://github.com/charan-happy/Learning_Go/tree/main/Day-13)|Error handling in API development <br> Middleware and authentication <br> context package in golang and its use in API Development <br> Best practices for creating, testing and deploying APIs <br> Popular frameworks and routers in golang|
+|[Day-14](https://github.com/charan-happy/Learning_Go/tree/main/Day-14)|Basic Project creation **Go-payment-Integration usinig stripe** |
 |[Day-15](https://github.com/charan-happy/Learning_Go/tree/main/Day-15)||
 |[Day-16](https://github.com/charan-happy/Learning_Go/tree/main/Day-16)||
 |[Day-17](https://github.com/charan-happy/Learning_Go/tree/main/Day-17)||
