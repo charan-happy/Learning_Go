@@ -12,6 +12,10 @@ star ⭐ the repo and follow me on [github](https://www.github.com/charan-happy)
 
 [Syllabus](https://github.com/charan-happy/Learning_Go/blob/main/syllabus.md)
 
+[Notes](https://github.com/charan-happy/Learning_Go/blob/main/Go-Hero%20to%20zero-Notes.md)
+
+
+
 |Day|Content|
 |---|---|
 |[Day-1](https://github.com/charan-happy/Learning_Go/tree/main/Day-1)|1. overview of go-lang<br>2. Setting up the GoLang environment<br>3. First Go program|
