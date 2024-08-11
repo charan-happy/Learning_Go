@@ -1,9 +1,43 @@
-Introduction to GO
+[Introduction To Go]()  
+[Installation and Environment Setup]()  
+[First Program using Go]()  
+[Variables and constants]()  
+[Datatypes and Operators]()  
+[Conditional statements]()  
+[Pointers]()  
+[Basic Functions]()  
+[Arrays]()  
+[Slices]()  
+[Maps]()  
+[Structs]()  
+[Advanced Functions]()  
+[Interfaces]()  
+[Error handline]()  
+[Packages]()  
+[Generics]()  
+[Debugging]()  
+[Dependency Management]()  
+[json Processing]()  
+[File handling]()  
+[Logging, properties, embedded]()  
+[Unit testing]()  
+[Concurrency]()  
+[connecting to postgresql]()  
+[connecting to mongodb]()  
+[Connecting to couchbase]()  
+[static code analysis]()  
+[Dependency Ingestion approach]()  
+[Project -jazz Rentals]()  
+## - Introduction to GO
 
 	Creation of GO : From 2009 to 2012, a new programming language was being developed by Google Engineers [Robert Griesemer, Rob Pike, and Ken Thompson] called as "go" or "golang"
+	
 	Agenda of GO: the agenda of go creation was to build in right, concise and limited features which served as the key reason for GO. They focussed on exploiting basic features and serve clarity rather than complex features which causes ambiguity
+	
 	Features of GO : In-Built concurrency, Garbage collection, OOPs simplified, Simplicity and efficiency, inference variable types, platform independent
+	
 	Application of GO: Go has applications in Web development, machine learning, command line tools and even server handling
+	
 	Real-time usage of GO:
 		> Uber for microservices
 		> Netflix for heavy data processing
@@ -24,11 +58,11 @@ We already have bunch of other programming languages, why we need to learn go ag
 	2. Go's approach for OOPS features in other languages is simplified (structs, interfaces, composition)
 	3. Go has built-in constructs for concurrency (Concurrency establishes synchronization between dependent processes, shared data, and deadlocks. )
 	
-Getting started with GO :
-	Installation and setup
-		1. Go to go's official site and download
-		2. go version --> To check go version
-		3. go env GOROOT --> To check GOROOT path in your system
+## Getting started with GO :  
+	Installation and setup  
+		1. Go to go's official site and download  
+		2. go version --> To check go version  
+		3. go env GOROOT --> To check GOROOT path in your system  
 		
 	additional data:
 		gopls: It is offical Go language server developed by Go team, which is required when working with Go modules in vscode or other IDEs
@@ -37,43 +71,44 @@ Getting started with GO :
 		go mod tidy: This command ensures that go.mod file is up-to-date with all the packages and dependencies required by the source code to complete a successful build
 		
 
-First program in Go :
-	```go
+## First program in Go :  
+```go
 	package main
 	import "fmt"
 	func main(){
 	fmt.Println("Hello, world")
 	}
-	```
-	understanding written code:
-	> packages are declared using package keyword followed by package name.
+```
+understanding written code:  
+> packages are declared using package keyword followed by package name.
 		`package <package name>`
 	  package is a go keyword used for declaring packages. Every Go program commences with package declaration. Go organizes its code and reuses it by using packages.
 	  In Go, main is a special package that contains the main() function and is also responsible for importing other standard library packages or third-party packages required in the program.
 	  
-	> import statements in Go are used to include different packages to be used in our program just like other programming languages. the "fmt" (shorthand for format) package is used for formatting input and outputs
+> import statements in Go are used to include different packages to be used in our program just like other programming languages. the "fmt" (shorthand for format) package is used for formatting input and outputs
 		How to import ? There are two ways:
 		1. By using import block() which will omit the redundancy of using import keyword for every package
 		2. Traditional way as shown above
-	> func main():
+
+> func main():
 		Functions are just like in other programming languages are building blocks of code which provides reusability and increases maintainability of code
-		
 		In Go, main function inside the main package is the entry point. There may be some user-defined functions that might execute before main function but in general main function is the entry point when execution commences. Without main(() function in the main package, the Go compiler will not understand which program to execute.
 		
-	> fmt.Println() is the inbuilt function in go, bundled in fmt package. This function tells the compiler to print text on the screen.
+> fmt.Println() is the inbuilt function in go, bundled in fmt package. This function tells the compiler to print text on the screen.
 		if we want to print formatted strings we can use another function inside fmt package that is fmt.Printf(). It contains symbols in the string which you want to print and then arguments after it will replace those values.
 		
-   How to run the Go program : go run <file name> 
+   How to run the Go program : `go run <file name> `
    
  Till now we understand how to write basic hello world program and now let us proceed and understand how we can reuse our data by storing them into variables and reducing code redundancy.
  
  
-variables in Go :
+### variables in Go :  
 	- variables are memory locations used to store data. This data can be manipulated and rendered with use of identifiers. Identifiers are names given to these variables by the programmer.
+	
 	Variable Declaration:
 		- variables declaration is broadly classified into two types. They are	1. function level 2. pacakge level
 		
-		```go
+```go
 		// function level 
 		
 		var flag int = 24
@@ -81,9 +116,9 @@ variables in Go :
 		var msg="Hello world"
 		initializer:=100.0
 		i, j, k := 1,2,3
-		```
+```
 		
-		```go
+```go
 		// package level
 		var flag int = 2300
 		var count int
@@ -91,11 +126,11 @@ variables in Go :
 		var (xy int = 25
 		yz string = "var block"
 		)
-		```
-	1. Declaring variables at function level :
+```
+#### 1. Declaring variables at function level :
 	 There are 5 ways in which variables can be declared at functional level.
 	 
-	 ```go
+```go
 	 func main(){
 	 /*
 	 1. Initializing at the time of declaration(standard way)
@@ -114,16 +149,16 @@ variables in Go :
 	 fmt.Println(validity, price, LoginMessage)
 	 fmt.Println(i,j,k)
 	 }
-	 ```
+```
 	 var keyword is used to create variables in Go.
 	 
 	 shorthand declaration is useful when you are making extra initialization or creating a variable to catch value returned by a function
 	 Since, Go is readable and concise programmming language. Go the programmer is not allowed to declare a variable and keep it unused. A compilation error will occur. To surpass that compilation error, we can use blank identifier that is _ to throwaway the variable and ignore showcasing errors for this variable.
 	
-	2. Declaring Variables at Package level 
+#### 2. Declaring Variables at Package level 
 		There are 4 ways in which variables can be declared at package level 
 		
-		```go
+```go
 		/*
 		1. standard way
 		2. Initializing later
@@ -136,8 +171,8 @@ variables in Go :
 		func main() {
 		fmt.Println(customerLoginId, validity, years)
 		}
-		```
-		```go 
+```
+```go 
 		var ( // var block
 		customerName = "charan"
 		customerAge = 45
@@ -148,15 +183,15 @@ variables in Go :
 		fmt.Println(customerContact)
 		}
 		
-		```
+```
 		
 		Note : variable declaration can be used at functional level too.
 				variable declaration block is useful to club the variables associated with same function or business logic
 				shorthand operator (:) cannot be used inside var block. Go will throw compilation error.
 				
-		```go
-		func main(){
-		var(
+```go
+	func main(){
+	var(
 		planValidity int =24
 		counter int 
 		totalcontacts = 100
@@ -167,13 +202,13 @@ variables in Go :
 		fmt.Println(counter, totalContacts)
 		fmt.Println(i,j,k)
 		}
-		```
+```
 		Redeclaration and shadowing:
 		- In Go, we cannot redeclare variables in same scope. it means whether it is package level or function level you cannot declare any variable twice. It will throw and error "<variable-name> redeclared in this block"
 		- variables in Go can be redeclared and reinitialized in different scope
 		- when we reinitialize a variable in different scope, the innermost initialization takes highest priority. This concept is known as "shadowing"
 		
-		```go
+```go
 		var customerLoginId string = "c1001"
 		// variable declared at package level
 		var validity int = 199
@@ -194,7 +229,7 @@ variables in Go :
 		fmt.Println(customerLoginId)
 		}
 		
-		```
+```
 		
 		Variable Naming Conventions:
 		
@@ -211,7 +246,7 @@ variables in Go :
 		--------------------
 		> Visibility and Scope of a variable in Go language can be classified into 3 levels:
 		
-		```go
+```go
 		/*
 		1.package level
 		2. Global level
@@ -229,7 +264,7 @@ variables in Go :
 		customerFullName := CustomerName+customerLastName
 		fmt.Printf("%v \nContact No. %v)
 		}
-		```
+```
 		
 		1. Package level:
 		> Variables name, if begins with a lower-case letter then it is scoped to the package level 
@@ -247,13 +282,13 @@ variables in Go :
 		
 		what if we required to store some values which cannot be altered? let's drive into Constants to understand 
 		
-Constants :
+## Constants :
 
 	- A constant is a name/identifier used to create fixed values. These values can be neither be altered by any function nor can be shadowed away by any reinitialization
 	
 	In Go, constants can be created using two approaches: 1. Using const keyword and 2. Constants declaration block 
 	
-	```go
+```go
 	
 	package main 
 	import "fmt"
@@ -268,7 +303,7 @@ Constants :
 	fmt.Println("value of PI: ", PI)
 	fmt.Println("value of Euler's Number (e): ", EULERS_NUMBER)
 	}
-	```
+```
 	
 	1. Using const keyword: 
 		> constants can be declared using const keyword, followed by the type of value to be stored
@@ -1352,7 +1387,7 @@ func setCustomerDetails(details string) string{
 	// function body
 }
 ```
-	*callling functions*
+**callling functions**
 
 ```GO
 // syntax
@@ -1485,7 +1520,7 @@ func setCustomerDetails(details string) (string, string) {
 
 ```
 
-	Multiple Named Return values:
+**Multiple Named Return values:** 
 	
 ```GO
 package main
@@ -1502,7 +1537,7 @@ func main() {
 
 ```
 
-	passing by reference :
+**passing by reference :**
 	
 ```GO
 package main
@@ -1641,8 +1676,292 @@ Best practices :
 8. use the idiomatic go style
 
 
-Arrays:
+## Arrays:
 
 How do we store a group of related values having same type together ?
 
-- Arrays can be defined as a "fixed" collection of values
+- Arrays can be defined as a "fixed" collection of values having the same data type. The values are stored in contiguous memory locations and can be accessed using a single identifier
+
+- Arrays are static in nature, that is their size cannot be modified. And arrays can be declared as single dimensional and multidimensional arrays.
+
+How to Declare an array in Go 🤔 ? `var identifier[size] datatype`
+
+```
+var customerInvoice[5] int 
+fmt.Println(customerInvoice)
+
+```
+
+Here, when we print the arrya customerInvoice, which is empty and not intitialized, the default values for int type will be displayed.
+
+[0 0 0 0 0]
+
+**Initializing Arrays in Go**
+
+we can initialize either individual elements of an array or all the elements of an array in a single line. Also indexing elements of the array also follows the simmilar suite; That is for n sized array, the indexing starts with [0] for the 1st element and ends up at (n-1)th for the last element.
+
+Different ways to initialize an array :
+
+a. Initializing Single Element of an Array
+
+```go 
+// customerInvoice[3] = 1345 //Accessing and initializing the 4th element of the array 
+package main 
+import "fmt"
+func main() {
+var customerInvoice[5] int 
+customerInvoice[6] = 14464 // Accessing element with index more than size of an array 
+fmt.Println(customerInvoice)
+}
+/*
+output :
+
+Invalid array index 6 (out of bounds for 5-element array)
+*/
+```
+
+b. Initializing All Elements of the Array 
+
+- Here we can initialize all the elements in a single line statement: for example:
+
+```Go
+var customerInvoice[5] int = [5] int {244, 124, 462, 264, 262}
+// alternatively, we can type-infer while initializing the array 
+var customerInvoice = [5] int{134, 342, 463, 363, 464}
+```
+
+- Again, we must take care that the values mentioned for initializing the array does not exceed the size of the array. In such cases, it will again throw an out of bound error.
+
+c. Shorthand Declaration and Initializing Arrays 
+
+- We can also declare any arrays using shorthand method. for ex:
+
+```Go
+customerInvoice := [5] int {233, 233, 232, 136, 263}
+// alternatively we can use ellipsis declaration where size is determined based on the values mentioned
+customerInvoice := [...] int {244, 346, 246}
+```
+
+## Built-in Functions in Arrays:
+
+In Go, Arrays have the following built-in functions.
+
+a. len(): This function takes the array identifier as argument and returns the size/length of array. Length (or len) tells how many elements are present in the array. For ex:
+
+```Go
+var customerInvoice = [...]
+int{352, 235, 632, 323, 464}
+fmt.Println(len(customerInvoice))
+// Here len() is taking customerInvoice as an argument and returns the size of that array, which is 5
+```
+
+- The len() function is essential in iterating/traversing the array.
+
+b. cap(): This function works simmilar to len() function, as it returns the capacity of the array. Capacity(or cap) tells the maximum number of elements the array can hold. In Go, the length and capacity of an array are equal. For Ex:
+
+```Go
+var customerInvoice = [...]
+int{252, 235, 236, 464, 643}
+fmt.Println(cap(customerInvoice))
+```
+
+c. range: This keyword is used for setting the scope to traverse the array, where we can get both the indices and the subsequent elements in the array. For Ex:
+
+```Go
+var customerIndex[...]
+int {135, 456, 365, 473, 474}
+for index, element := range customerInvoice{
+// using for loop for traversing the array 
+fmt.Println(index, "=>", element)
+}
+```
+
+Here, the range returns the indices of the array as 1st value and the corresponding element of the indices as 2nd value. Now, based on the requirement, we can access either the indices or the elements of the arrays separately as well.
+
+```Go
+for index:= range customerInvoice {
+// Accessing only indices of an array
+fmt.Println(index)
+}
+for _,element:= range customerInvoice {
+//Accessing only elements of Array 
+}
+```
+
+Arrays are copied
+
+- In Go, if we assign an already initialized array to a new variable, then changes made to the elements in new variable will not reflect on the original array. For ex:
+
+```Go
+productionCode1:= [5]int{23, 54, 53, 64, 56}
+//creating a new variable 
+productionCode2 := productionCode1
+
+fmt.Println("productionCode1 Array Before:", productionCode1)
+fmt.Println("productionCode2 Array Before:", productionCode2)
+
+// changing the value of elements in productionCode2
+productionCode2[0] = 0
+productionCode2[2] = 0
+productionCode2[4] = 0
+
+fmt.Println("productionCode1 Array After:", productionCode1)
+fmt.Println("productioncode2 Array After:", productionCode2)
+
+/*
+output :
+productCode1 Array Before: [11 23 15 27 19]
+productCode2 Array Before: [11 23 15 27 19]
+productCode1 Array After: [11 23 15 27 19]
+productCode2 Array After: [0 23 0 27 0]
+
+*/
+```
+
+Passing Arrays to Functions:
+
+- Arrays in Go follow the feature of Pass by Value. In simple terms, if we pass an array as argument to a function, then a copy of that array is passed to the function. As a result, any changes made to the array inside the function will not reflect in the actual array.
+
+```Go
+package main 
+import "fmt"
+func arrayOp(productCode2 [5]int) {
+fmt.Println("Inside arrayOp(): productCode2 Array Before:", productCode2)
+//changing the value of elements in productCode2
+productCode2[0] = 117
+productCode2[2] = 285
+productCode2[4] = 849
+fmt.Println("Inside arrayOp(): productCode2 Array After:", productCode2)
+}
+
+func main() {
+productCode1:= [5]int{11, 33, 23, 33, 26}
+fmt.Println("Inside main(): productCode1 Array Before:", productCode1)
+
+arrayOp(productCode1)
+fmt.Println("Inside main(): productCode1 Array After:", productCode1)
+}
+/*
+Inside main(): productCode1 Array Before: [11, 33, 23, 33, 26]
+Inside arrayOp(): productCode2 Array Before: [11, 33, 23, 33, 26]
+Inside arrayOp(): productCode2 Array After: [117, 33, 285, 33, 849]  
+Inside main(): productCode1 Array After: [11, 33, 23, 33, 26]
+
+*/
+```
+
+Here, we have our acutal array productCode1 declared in main(). This array is passed as an argument when we are invoking arrayOp() function. So, the values/elements of productCode1 array are being copied to productcode2 array. Hence, when we modify productCode2 (which is local to arrayOp() function) the changes do not reflect in productCode1
+
+MultiDimensional Arrays in Go:
+
+Like any other programming languages, Go also supports the declaration and usage of multi-dimensional arrays. For Ex: we can declare a 2D Array (which is basically an array of arrays):
+
+var multidimension = [2][3]int{{1,2,4},{4,5,6}}
+					Rows Columns
+					
+```Go
+// Accessing the different elements of a multi-dimensional array with brief example:
+
+multidimension := [2][3]int{{1,2,3},{4,5,6}}
+// Accessing individual Elements
+multidimension[1][1] = 9
+
+// Accessing or Displaying all Elements using 2 nested for loops
+for row:=0; row<2; row++ {
+for column:=0; column<3; column++ {
+fmt.Printf("%v ",multidimension[row][column])
+fmt.Println()
+}
+/*
+output:
+ 1 2 3 
+ 4 9 6
+*/
+
+```
+
+Best Practices - Arrays :
+
+1. Declare arrays with a fixed size: when declaring arrays, it's best to specify the size explicitly.This helps avoid unexpected runtime errors due to out-of-bound access 
+2. Use range loops to iterate over arrays: Go provides a convenient "range" keyword that can be used to loop over arrays. This is a safer and more concise way to iterate over arrays thatn using traditional for loop.
+3. Avoid passing arrays as arguments to functions: when you pass an array to a function in go, a copy of the entire array is made. This can be inefficient for large arrays, instead, consider using slice or a pointer to the array.
+4. use "..." syntax to initialize arrays: Go provides a concise syntax for initializing arrays with a fixed set of values. For ex: `a := [...]int{1, 2, 3, 4, 5}`
+- Avoid mixing array types: Go does not allow mixing types in an array. Mixing types in an array can lead to unexpected behavior and should be avoided.
+- Avoid using arrays for large data sets: Arrays do not efficient for large data sets. For large data sets, consider using database or other data storage solution 
+- Use the built-in len function to get the length of an array.: Go provides a built in len function that can be used to get the length of an array. This is safer and more convenient way to get the length of an array than using a magic number or constant.
+
+Slices in Go:
+
+ - In Go, Slices are another collection type which provides a dynamic, flexible view into an underlying array. Slices are simmilar to array as:
+    > They store homogenous type of data
+    > Have an index value associated with each element in the slice which is of type integer and represents the position of the data item in the slice.
+ 
+
+The main difference between arrays and slices are :
+
+	> slices are dynamic in nature. the size of a slice is not fixed and can be modified 
+	> Slices do not store data values in contiguous memory locations, rather they simply point to memory location of arrays. Therefore, each slice points to an underlying array to store the elements.
+	
+	Let's have a look at the basic structure of a slice :
+	
+	The structure of a slice contain the following components:
+	
+	**Underlying Array:** It is the array of elements that the slice points to, any  modifications made to the slice will also reflect in this underlying array.
+	
+	**Address Pointer:** It is the pointer that points to the first element of the underlying array the slice views.
+	
+	**Index**: Each element of a slice has an index value simmilar to array.
+	
+	**length**: It defines maximum number of elements present in slice.
+	
+	**capacity**: It defines maximum number of elements that can be accomdated in the slice without resizing the slice. In a slice:
+		> capacity is always be equal or greater than Length
+		> If the lenght becomes greater than capacity (overflow) the elements of the existing underlying array will be copied into a new underlying array with increased capacity. The new underlyinig array will replace the existing underlying array for the slice.
+		
+		So, if we declare the following slice:
+		
+		nameSlice := []string{"Adam", "charan", "happy", "mom"}
+		
+		Here address Pointer = "Adam", "charan", "happy", "mom"
+		
+		How to create slices:
+	     1. Using slice Literal :
+			> This is the shorthand approach of creating slice when the elements of the slices are known. In this approach, the length and capacity cannot be explicitly mentioned. The length and capacity both are equal to the number of elements mentioned while declaration.
+			
+			```Go
+			sliceVariable := []T{element1, element2, element3,..., elementN} //the expression on RHS is slice Literal
+			```
+		Here T stands for the type of elements stored by the slice. For example: 
+		
+		nameList := []string{"Charan", "Dean", "Nick", "Doll"}
+	
+**specifying initial length and capacity using slice literal**:
+- We can specify length and capacity using slice literal by the following approach:
+
+`intSlice := []int{6: 99} //length and capacity 7 and the last element is 99`
+
+In this approach, we are creating a slice of 7 elements and last element is initialized as 99.
+
+
+**creating slice variable**:
+- using var keyword we can declare a slice. Syntax:
+
+`var sliceVariable []T`
+
+- In this approach, an empty or nil slice of type T is created in which the length and capacity both are equal to 0. For ex:
+var nameList []String
+
+**using Built-in Function make()**
+
+- Make function is used to create empty slices. In this approach, length is a mandatory field and capacity is optional. Syntax :
+
+```Go
+
+sliceVariable := make([]T, length, capacity) // if length and capacity are explicitly mentioned or
+sliceVariable := make([]T, length) // if capacity is not mentioned (length == capacity)
+```
+EX: nameSlice:= make([]int, 4,7) //lenght=4, capacity=7
+
+Here, the length of slice is 4 and capacity is 7. Also, only first four indices have default integer value(0) and rest indices are uninitialized. The structure of the above slice can be represented with the following diagram.
+
+![alt text](image-6.png)

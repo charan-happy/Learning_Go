@@ -59,3 +59,6 @@ star ⭐ the repo and follow me on [github](https://www.github.com/charan-happy)
 [Linkedin](https://www.linkedin.com/in/nagacharan-g)
 
 [Twitter](https://x.com/charantechie)
+
+All right, you did all the things, what next 🤔? Giving interviews right ? But, wait, have you checked yourself ?🤔No, right ? So, here we go [Interview Preparation Resource](https://www.fullstack.cafe/interview-questions/golang) to go throught to get high chances of selecting in your next interview.
+
