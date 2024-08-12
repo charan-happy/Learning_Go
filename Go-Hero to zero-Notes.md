@@ -1965,3 +1965,142 @@ EX: nameSlice:= make([]int, 4,7) //lenght=4, capacity=7
 Here, the length of slice is 4 and capacity is 7. Also, only first four indices have default integer value(0) and rest indices are uninitialized. The structure of the above slice can be represented with the following diagram.
 
 ![alt text](image-6.png)
+
+**Inserting Elements at the End:**
+- We can add individual or multiple elements to a slice using append() function. Append is an builtin function which takes an existing slice and the new element(s) to be added and returns the new slice which contains elements from the existing slice and followed by new element at the end. using append() we can add one or more new elements at a time.
+
+```Go
+newSlice := append(oldSlice, element1) // appending single element at a time
+newSlice := append(oldSlice, element1, element2, ..., elementN) // appending N elements at a time.
+```
+
+```Go
+func main() {
+nameList := []string{"Charan", "Devops"}
+// line 1: Slice length = capacity = 2
+fmt.Println(nameList, len(nameList), cap(nameList))
+
+nameList = append(nameList, "Cherry")
+// line 2: Slice length = 3, capacity = 4
+fmt.Println(nameList, len(nameList), cap(nameList))
+}
+/* 
+output
+[Charan Devops] 2 2
+[Charan Devops Cherry] 3 4
+*/
+
+```
+
+How is the capacity of slice managed dynamically ?
+
+- whenever a slice reaches maximum capacity and further elements are inserted, the contents of the current underlying array is copied and pasted into a new underlying array with increased capacity. And the slice then refers to this new underlying array until its capacity is full.
+
+Modifying Elements at specific Index:
+
+Simmilar to arrays, we can also modify an element at any specific index of slice. Accessing an index out of bounds will lead to runtime error 
+
+EX:
+```Go
+func main() {
+nameList := make([]string, 3)
+nameList[0] = "Charan" // inserting new element at 0 index
+fmt.Println(nameList)
+nameList[1] = "Cherry" // inserting new element to 1st index
+fmt.Println(nameList)
+nameList[0] = "Intelligent" // Modifying element at 0th index
+fmt.Println(nameList)
+}
+/*
+output:
+[Charan ]
+[charan Cherry]
+[charan Cherry Intelligent]
+```
+
+**Slicing slices and Arrays**
+- In Go, we can also create a slice from an existing slice or array. 
+
+```Go
+newSlice := existingSlice[start:end] //for creating slice from existing slice
+newSlice := existingArray[start:end] //for creating slice from existing Array
+
+```
+- Here, "start" is the index of the first element to be added in the new slice and "end" is the index of the first element to be excluded from the slice. Hence, the new slice will contain all elements from "start" index up to and excluding "end" index 
+
+```Go
+func main() {
+nameSlice := []string{"charan", "welcome", "price", "Ghost", "shepherd", "yurl"}
+nameArray := [...]string{"Monster", "Wood", "Dmitri", "Hudson", "victor"}
+
+sliceFromSlice := nameSlice[1:4] //line1
+fmt.Println(sliceFromSlice)
+sliceFromArray := nameArray[0:3]
+fmt.Println(sliceFromArray)
+}
+/*
+output:
+[welcome price Ghost shepherd]
+[Monster Wood Dmitri
+*/
+```
+we can also exclude either or both the start and end index while creating the slice from existing slice/array and observe the following
+
+**Excluding start index only:** The new slice will take all elements from the beginning of existing slice/array up to and excluding the end index mention.
+
+```Go
+func main() {
+nameSlice := []string{"Alex", "Gaz", "Price", "Ghost", "Shepherd", "Yurl"}
+sliceFromSlice := nameSlice[:4] //start index Excluded and End index :4
+fmt.Println("output:", sliceFromSlice)
+}
+/* 
+output
+output: [Alex Gaz Price Ghost]
+*/
+```
+
+**Excluding end index only:** The new slice will take all elements from the start index mentioned till the end of existing slice/array. 
+
+```Go
+func main() {
+nameSlice := []string{"Alex", "Gaz", "Price", "Ghost", "Shepherd", "Yurl"}
+sliceFromSlice := nameSlice[4:] //start index:4  and End index Exluded
+fmt.Prinln("Output: ", sliceFromSlice)
+}
+/*
+output: [Shepard yuri]
+*/
+```
+
+**Excluding both start and end index:** The new slice will take all elements from the existing slice/array.
+
+```Go
+func main() {
+nameSlice := []string{"Alex", "Gaz", "Price", "Ghost", "Shepherd", "Yuri"}
+sliceFromSlice := nameSlice[:] //start and End index excluded
+fmt.Println("output: ", sliceFromSlice)
+}
+/*
+output;
+[Alex Gaz price Ghost Shepard yuri]
+*/
+}
+```
+
+Are the new Slice(obtained from slicing) and the existing slice two different slices ?
+
+when we create new slice from existing slice, both slices refer to the same underlying array. But,both the slices access different lengths and capacities of the same underlying Array
+
+And the above mentioned features also apply to slices created from existing arrays as well.
+
+```Go
+func main() {
+nameSlice := []string{"charan", "gani", "peace", "sheep", "Angel", "yusuf", "makers"} //existing slice
+fmt.Println("nameSlice: ", nameSlice)
+newNameSlice := nameSlice[2:5] // new Slice created from Existing slice
+
+fmt.Println("newNameSlice: ", newNameSlice)
+}
+```
+

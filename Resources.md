@@ -16,3 +16,7 @@
 [golang-bot](https://golangbot.com/learn-golang-series/)
 
 [Datastructures and algorithms](https://www.youtube.com/watch?v=2ZLl8GAk1X4)
+
+[Interview preparation](https://www.fullstack.cafe/interview-questions/golang)
+
+[Company Wise DSA Interview Questions](https://www.propeers.in/roadmaps/657d83e7cc66959a2168f16e?utm_source=linkedin&utm_medium=influencer&utm_campaign=Sakshi)
