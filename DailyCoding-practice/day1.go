@@ -34,6 +34,32 @@ func main() {
     fmt.Println("Brute Force Result:", result) // Output: true
 }
 
+/*
+How It Works
+Use two nested loops:
+Outer loop (i) iterates from the first element to the second-to-last.
+Inner loop (j) iterates from i+1 to the last element.
+For each pair (nums[i], nums[j]), check if their sum equals k.
+Return true as soon as a valid pair is found; otherwise, return false.
+Complexity
+Time Complexity: 
+O(n^2)
+For a list of length 
+n
+, the outer loop runs 
+n-1
+ times, and the inner loop runs up to 
+n-1
+ times in the worst case.
+Total comparisons: 
+(n-1) + (n-2) + \dots + 1
+, which is 
+\frac{n(n-1)}{2}
+, simplifying to 
+O(n^2)
+.
+*/
+
 // optimized approach
 
 package main
